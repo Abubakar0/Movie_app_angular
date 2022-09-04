@@ -1,0 +1,32 @@
+<div class="p-3">
+  <button type="button" class="btn btn-sm btn-outline-dark m-2" routerLink="">
+    back
+  </button>
+  <div class="row container">
+    <h2>{{ details.name }}</h2>
+    <p>({{ details.mpaaRating.type }}: {{ details.mpaaRating.label }})</p>
+
+    <div class="col-md-3 my-3">
+      <img src="{{ details.imgPath }}" class="img-thumbnail" />
+    </div>
+    <div class="col-md-8 my-3">
+      <h2>Details</h2>
+      <ul class="list-group my-3">
+        <li class="list-group-item">
+          <strong>Genre :</strong> {{ details.genre }}
+        </li>
+        <li class="list-group-item">
+          <strong>Language : </strong> {{ details.language }}
+        </li>
+        <li class="list-group-item">
+          <strong>Duration : </strong> {{ details.duration }} minutes
+        </li>
+        <li class="list-group-item">
+          <strong>User Ratings :</strong> {{ details.userRating }}
+        </li>
+        <h2 class="my-3">Synopsis</h2>
+        <p>{{ details.description }}</p>
+      </ul>
+    </div>
+  </div>
+</div>

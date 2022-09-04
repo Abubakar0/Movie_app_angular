@@ -1,0 +1,28 @@
+<div class="container">
+  <div id="search-autocomplete" class="my-3 form-outline" style="width: 300px">
+    <input
+      type="text"
+      name="search"
+      [(ngModel)]="searchText"
+      autocomplete="off"
+      id="form1"
+      class="form-control"
+      placeholder="Search"
+    />
+  </div>
+  <h2 class="my-3">Popular Movies This Month</h2>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    <div class="col" *ngFor="let movie of movies | filter: searchText">
+      <div class="card" routerLink="/movies/{{ movie.id }}">
+        <img src="{{ movie.imgPath }}" height="300px" />
+
+        <div class="card-body">
+          <h5>{{ movie.name }}</h5>
+          <h6>Duration : {{ movie.duration }}</h6>
+          <h6>UserRating : {{ movie.userRating }}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
